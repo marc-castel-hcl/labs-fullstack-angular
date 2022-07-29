@@ -13,6 +13,9 @@ Post-Deployment Script Template
 PRINT N'Executing script file .\Seed.REGION.sql ...';
 :r .\Seed.REGION.sql	
 
+PRINT N'Executing script file .\Seed.LOCATION.sql ...';
+:r .\Seed.LOCATION.sql
+
 PRINT N'Executing script file .\Seed.GIVEN_NAME.sql ...';
 :r .\Seed.GIVEN_NAME.sql
 

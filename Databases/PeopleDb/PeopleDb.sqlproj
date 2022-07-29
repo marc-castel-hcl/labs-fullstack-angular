@@ -24,7 +24,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <Recovery>SIMPLE</Recovery>
     <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
-    <DefaultSchema>dimensions</DefaultSchema>
+    <DefaultSchema>people</DefaultSchema>
     <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -68,6 +68,7 @@
     <Folder Include="dimensions" />
     <Folder Include="dimensions\Tables" />
     <Folder Include="utils\Stored Procedures" />
+    <Folder Include="people\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="security\people.sql" />
@@ -82,6 +83,8 @@
     <Build Include="dimensions\Tables\dimensions.REGION_DETAIL.sql" />
     <Build Include="dimensions\Tables\dimensions.SURNAME.sql" />
     <Build Include="dimensions\Tables\dimensions.GIVEN_NAME.sql" />
+    <Build Include="people\Tables\people.PERSON.sql" />
+    <Build Include="dimensions\Tables\dimensions.LOCATION.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
@@ -96,6 +99,7 @@
     <None Include="PeopleDb.publish.xml" />
     <None Include="Seed.GIVEN_NAME.sql" />
     <None Include="Seed.SURNAME.sql" />
+    <None Include="Seed.LOCATION.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />
