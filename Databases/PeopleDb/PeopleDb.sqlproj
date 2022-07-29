@@ -71,6 +71,7 @@
     <Build Include="security\people.sql" />
     <Build Include="security\utils.sql" />
     <Build Include="security\dimensions.sql" />
+    <Build Include="dimensions\Tables\REGION.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
@@ -78,5 +79,8 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
     </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

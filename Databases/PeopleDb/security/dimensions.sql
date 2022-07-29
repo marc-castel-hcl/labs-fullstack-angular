@@ -1,1 +1,1 @@
-﻿
+﻿CREATE SCHEMA [dimensions] AUTHORIZATION dbo;
