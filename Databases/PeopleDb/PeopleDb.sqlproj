@@ -25,6 +25,7 @@
     <Recovery>SIMPLE</Recovery>
     <AllowSnapshotIsolation>True</AllowSnapshotIsolation>
     <DefaultSchema>dimensions</DefaultSchema>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -66,12 +67,21 @@
     <Folder Include="utils" />
     <Folder Include="dimensions" />
     <Folder Include="dimensions\Tables" />
+    <Folder Include="utils\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="security\people.sql" />
     <Build Include="security\utils.sql" />
     <Build Include="security\dimensions.sql" />
-    <Build Include="dimensions\Tables\REGION.sql" />
+    <Build Include="dimensions\Tables\dimensions.REGION.sql" />
+    <Build Include="utils\Stored Procedures\utils.DEFRAG_DB_INDEXES.sql" />
+    <Build Include="utils\Stored Procedures\utils.DEFRAG_TABLE_INDEXES.sql" />
+    <Build Include="utils\Stored Procedures\utils.GET_DB_INDEX_STATISTICS.sql" />
+    <Build Include="utils\Stored Procedures\utils.GET_TABLE_INDEX_STATISTICS.sql" />
+    <Build Include="dimensions\Tables\dimensions.REGION_CURRENCY.sql" />
+    <Build Include="dimensions\Tables\dimensions.REGION_DETAIL.sql" />
+    <Build Include="dimensions\Tables\dimensions.SURNAME.sql" />
+    <Build Include="dimensions\Tables\dimensions.GIVEN_NAME.sql" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
@@ -82,5 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include="Seed.REGION.sql" />
+    <None Include="PeopleDb.publish.xml" />
+    <None Include="Seed.GIVEN_NAME.sql" />
+    <None Include="Seed.SURNAME.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
